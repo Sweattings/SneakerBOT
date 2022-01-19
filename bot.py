@@ -1,9 +1,8 @@
-import email
-from lib2to3.pgen2.token import OP
 import time
 from selenium.webdriver.chrome.options import Options
 from xml.dom.minidom import Element
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
@@ -11,7 +10,13 @@ from selenium.webdriver.common.keys import Keys
 options = Options()
 options = webdriver.ChromeOptions()
 # Webdriver
+#driver = webdriver.Chrome(ChromeDriverManager().install())
 driver = webdriver.Chrome('chromedriver.exe', options=options)
+
+#For ChromeDriver version 79.0.3945.16 or over
+options.add_argument('--disable-blink-features=AutomationControlled')
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+options.add_experimental_option('useAutomationExtension', False)
 
 # Headless
 options.headless = True
@@ -50,4 +55,3 @@ login.click()
 
 time.sleep(5)
 driver.quit()
-
