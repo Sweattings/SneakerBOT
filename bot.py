@@ -27,7 +27,7 @@ em_xp = ("//input[@name='email']")
 time.sleep(1)
 email = driver.find_element_by_xpath(em_xp)
 email.click()
-email.send_keys("Philipp.fritz4@gmail.com")
+email.send_keys("philipp.fritz4@gmail.com")
 time.sleep(3)
 
 
