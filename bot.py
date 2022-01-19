@@ -25,22 +25,6 @@ options = webdriver.ChromeOptions()
 
 
 
-"""
-#For ChromeDriver version 79.0.3945.16 or over
-options.add_argument('--disable-blink-features=AutomationControlled')
-options.add_argument('--no-sandbox')
-options.add_argument('--single-process')
-options.add_argument('--disable-dev-shm-usage')
-options.add_argument("--incognito")
-options.add_argument('--disable-blink-features=AutomationControlled')
-options.add_argument('--disable-blink-features=AutomationControlled')
-options.add_experimental_option('useAutomationExtension', False)
-options.add_experimental_option("excludeSwitches", ["enable-automation"])
-options.add_argument("disable-infobars")
-"""
-
-
-
 # Url Selection
 url = "https://omi.veve.me/";
 driver.get(url);
@@ -58,7 +42,7 @@ email.send_keys("philipp.fritz4@gmail.com")
 pw_xp = ("//input[@name = 'password']")
 
 Passwd = driver.find_element_by_xpath(pw_xp)
-Passwd.send_keys("1Qay2wsx3edc!")
+Passwd.send_keys("--")
 
 
 
