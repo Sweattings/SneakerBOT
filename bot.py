@@ -13,20 +13,23 @@ except Exception as e:
 
     print("Error ->>>: {} ".format(e))
 
+time.sleep(1)
 
-#driver = webdriver.Chrome('chromedriver.exe', options=options)
+#driver = webdriver.Chrome('chromedriver.exe')
 driver = uc.Chrome(use_subprocess=True)
+driver.delete_all_cookies()
 
 # Config
 options = Options()
 options = webdriver.ChromeOptions()
+options.add_argument("--disable-extensions")
 
 
 
 
 
 # Url Selection
-url = "https://omi.veve.me/";
+url = ("https://omi.veve.me/")
 driver.get(url);
 
 
@@ -42,7 +45,7 @@ email.send_keys("philipp.fritz4@gmail.com")
 pw_xp = ("//input[@name = 'password']")
 
 Passwd = driver.find_element_by_xpath(pw_xp)
-Passwd.send_keys("--")
+Passwd.send_keys("1Qay2wsx3edc!")
 
 
 
@@ -50,8 +53,16 @@ Passwd.send_keys("--")
 lg_xp = ("//*[@id='root']/div/header/div/div/header/div/div/div/div[3]/button")
 
 login = driver.find_element_by_xpath(lg_xp)
-login.click()
+login.click();
 
+time.sleep(5)
+
+# 2FA Auth 
+
+factor_auth = ("/html/body/div[2]/div[3]/div/div[2]/div/div/div[1]/input]");
+
+auth_input = driver.find_element_by_class("jss9");
+auth_input.send_keys(2);
 
 time.sleep(5)
 
