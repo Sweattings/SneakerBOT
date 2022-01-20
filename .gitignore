@@ -2,6 +2,7 @@
 node_modules
 package-lock.json
 package.json
+client_secret_168445923059-8q75c474a4ltqeok9s2jnh0la45mpgri.apps.googleusercontent.com.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

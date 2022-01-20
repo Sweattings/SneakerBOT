@@ -6,7 +6,7 @@ try :
     from selenium import webdriver
     from selenium.webdriver.common.by import By
     from selenium.webdriver.common.keys import Keys
-    import undetected_chromedriver.v2 as uc
+    import undetected_chromedriver.v2 as uc   
     print('all module are loaded ')
 
 except Exception as e:
@@ -53,18 +53,41 @@ Passwd.send_keys("1Qay2wsx3edc!")
 lg_xp = ("//*[@id='root']/div/header/div/div/header/div/div/div/div[3]/button")
 
 login = driver.find_element_by_xpath(lg_xp)
-login.click();
+login.click()
 
-time.sleep(5)
+time.sleep(2)
 
 # 2FA Auth 
+# Input Numbers 
 
-factor_auth = ("/html/body/div[2]/div[3]/div/div[2]/div/div/div[1]/input]");
+number1 = driver.find_element_by_xpath("/html/body/div[2]/div[3]/div/div[2]/div/div/div[1]/input")
+number1.send_keys(1)
 
-auth_input = driver.find_element_by_class("jss9");
-auth_input.send_keys(2);
+time.sleep(1)
+number2 = driver.find_element_by_xpath("/html/body/div[2]/div[3]/div/div[2]/div/div/div[2]/input")
+number2.send_keys(2)
+time.sleep(1)
 
-time.sleep(5)
+number3 = driver.find_element_by_xpath("/html/body/div[2]/div[3]/div/div[2]/div/div/div[3]/input")
+number3.send_keys(3)
+
+number4 = driver.find_element_by_xpath("/html/body/div[2]/div[3]/div/div[2]/div/div/div[4]/input")
+number4.send_keys(4)
+
+number5 = driver.find_element_by_xpath("/html/body/div[2]/div[3]/div/div[2]/div/div/div[5]/input")
+number5.send_keys(5)
+
+number6 = driver.find_element_by_xpath("/html/body/div[2]/div[3]/div/div[2]/div/div/div[6]/input")
+number6.send_keys(6)
+
+time.sleep(2)
+# Close button
+factor_auth = ("/html/body/div[2]/div[3]/div/div[5]/div/div[2]/button")
+
+auth_input = driver.find_element_by_xpath(factor_auth)
+auth_input.click()
+
+time.sleep(10)
 
 
 driver.quit()
